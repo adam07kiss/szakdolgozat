@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tárgyaim</title>
+</head>
+<body>
+<h1>Kurzusok eredményei</h1>
+
+<table>
+    <tr>
+        <th>Név</th>
+        <th>Eredmény</th>
+        <th>Kredit</th>
+    </tr>
+    {% for eredmeny in eredmény_3_név_3.iterrows() %}
+    <tr>
+        <td>
+            {{ eredmeny[1]['Név'] }}
+        </td>
+        <td>
+            {{ eredmeny[1]['Eredmény'] }}
+        </td>
+        <td>
+            {{ eredmeny[1]['Kredit'] }}
+        </td>
+    </tr>
+    {% endfor %}
+    <h1>Eddig teljesített kreditek: {{ eredmenyek_ossz }}</h1>
+
+</table>
+</body>
+</html>
