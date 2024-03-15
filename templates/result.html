@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tárgyaim</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+<body>
+<div class="flex flex-col">
+
+    <h1>Kurzusok eredményei</h1>
+
+    <table>
+        <tr>
+            <th>Név</th>
+            <th>Eredmény</th>
+            <th>Kredit</th>
+        </tr>
+        {% for eredmeny in eredmény_3_név_3.iterrows() %}
+        <tr>
+            <td>
+                {{ eredmeny[1]['Név'] }}
+            </td>
+            <td>
+                {{ eredmeny[1]['Eredmény'] }}
+            </td>
+            <td>
+                {{ eredmeny[1]['Kredit'] }}
+            </td>
+        </tr>
+
+        {% endfor %}
+
+        <h1>Eddig teljesített kreditek: {{ eredmenyek_ossz }}</h1>
+
+    </table>
+
+    <table>
+        <tr>
+            <th>Név</th>
+            <th>Kurzuskód</th>
+        </tr>
+
+        {% for kotelezo in fennmarado_kotelezo_targyak.iterrows() %}
+        <tr>
+            <td>
+                {{ kotelezo[1]['Név'] }}
+            </td>
+            <td>
+                {{ kotelezo[1]['Tárgycsoport kódja'] }}
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+</body>
+</html>
